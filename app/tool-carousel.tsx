@@ -27,14 +27,13 @@ export function ToolCarousel({ tools }: ToolCarouselProps) {
 
   useEffect(() => {
     const timer = window.setInterval(goToNext, 3500);
-
     return () => window.clearInterval(timer);
   }, [goToNext]);
 
   return (
-    <div className="relative mx-auto flex h-[460px] w-full max-w-[560px] items-center justify-center overflow-visible bg-transparent">
-      <div className="pointer-events-none absolute h-[500px] w-[500px] rounded-full bg-orange-400/20 blur-3xl" />
-      <div className="pointer-events-none absolute h-[300px] w-[300px] rounded-full bg-yellow-300/20 blur-3xl" />
+    <div className="relative mx-auto flex h-[330px] w-full max-w-[560px] items-center justify-center overflow-visible bg-transparent sm:h-[400px] lg:h-[460px]">
+      <div className="pointer-events-none absolute h-[280px] w-[280px] rounded-full bg-orange-400/20 blur-3xl sm:h-[420px] sm:w-[420px] lg:h-[500px] lg:w-[500px]" />
+      <div className="pointer-events-none absolute h-[220px] w-[220px] rounded-full bg-yellow-300/20 blur-3xl sm:h-[300px] sm:w-[300px]" />
 
       {tools.map((tool, index) => {
         const isActive = index === activeIndex;
@@ -51,7 +50,7 @@ export function ToolCarousel({ tools }: ToolCarouselProps) {
             <img
               src={tool.image}
               alt={tool.name}
-              className="h-auto max-h-[360px] w-auto animate-[float_5s_ease-in-out_infinite] bg-transparent object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.25)] transition duration-500 hover:scale-105"
+              className="h-auto max-h-[250px] w-auto animate-[float_5s_ease-in-out_infinite] bg-transparent object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.22)] transition duration-500 hover:scale-105 sm:max-h-[310px] lg:max-h-[360px]"
             />
           </div>
         );
@@ -61,7 +60,7 @@ export function ToolCarousel({ tools }: ToolCarouselProps) {
         type="button"
         aria-label="Image précédente"
         onClick={goToPrevious}
-        className="absolute left-0 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-neutral-950/80 text-white shadow-lg transition hover:bg-orange-500"
+        className="absolute left-1 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-neutral-950/80 text-white shadow-lg transition hover:bg-orange-500 sm:left-0 sm:h-11 sm:w-11"
       >
         <ChevronLeft size={22} />
       </button>
@@ -70,12 +69,12 @@ export function ToolCarousel({ tools }: ToolCarouselProps) {
         type="button"
         aria-label="Image suivante"
         onClick={goToNext}
-        className="absolute right-0 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-neutral-950/80 text-white shadow-lg transition hover:bg-orange-500"
+        className="absolute right-1 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-neutral-950/80 text-white shadow-lg transition hover:bg-orange-500 sm:right-0 sm:h-11 sm:w-11"
       >
         <ChevronRight size={22} />
       </button>
 
-      <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+      <div className="absolute bottom-2 left-1/2 z-20 flex -translate-x-1/2 gap-2 sm:bottom-5">
         {tools.map((tool, index) => (
           <button
             key={tool.name}
