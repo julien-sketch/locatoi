@@ -220,7 +220,7 @@ export default function Home() {
             </div>
 
             <h1 className="mx-auto max-w-3xl text-4xl font-black leading-[1.03] tracking-tight sm:text-5xl md:text-7xl lg:mx-0">
-              Louez le bon matériel, au bon moment.
+              La vie se vit, les outils se louent
             </h1>
 
             <p className="mx-auto mt-6 max-w-xl text-base leading-8 text-neutral-700 sm:text-lg lg:mx-0">
@@ -398,26 +398,58 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-5">
           <div className="relative overflow-hidden rounded-[2rem] bg-neutral-950 p-7 text-white sm:rounded-[2.5rem] sm:p-10 md:p-14">
             <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-orange-500/20 blur-3xl" />
-            <div className="relative max-w-2xl">
-              <p className="font-black uppercase tracking-widest text-orange-400">
-                Vente de matériel
-              </p>
-              <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl md:text-6xl">
-                Besoin d’acheter plutôt que louer ?
-              </h2>
-              <p className="mt-5 text-base leading-8 text-neutral-300 sm:text-lg">
-                Loc à Toi 38 peut aussi proposer du matériel, des accessoires et
-                des équipements à la vente. Une solution utile quand l’usage
-                devient régulier.
-              </p>
+            <div className="relative grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.72fr)]">
+              <div className="max-w-2xl">
+                <p className="font-black uppercase tracking-widest text-orange-400">
+                  Vente de matériel
+                </p>
+                <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl md:text-6xl">
+                  Besoin d’acheter plutôt que louer ?
+                </h2>
+                <p className="mt-5 text-base leading-8 text-neutral-300 sm:text-lg">
+                  Loc à Toi 38 peut aussi proposer du matériel, des accessoires et
+                  des équipements à la vente. Une solution utile quand l’usage
+                  devient régulier.
+                </p>
 
-              <a
-                href={`mailto:${email}`}
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-orange-500 px-7 py-4 font-black text-white transition hover:bg-orange-600"
-              >
-                Nous contacter
-                <ArrowRight size={20} />
-              </a>
+                <a
+                  href={`mailto:${email}`}
+                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-orange-500 px-7 py-4 font-black text-white transition hover:bg-orange-600"
+                >
+                  Nous contacter
+                  <ArrowRight size={20} />
+                </a>
+              </div>
+              <div className="relative mx-auto w-full max-w-md">
+                <div className="rounded-[1.75rem] border border-white/10 bg-white p-5 text-neutral-950 shadow-2xl shadow-black/30 sm:p-7">
+                  <p className="text-xs font-black uppercase tracking-[0.28em] text-neutral-500">
+                    Partenaire
+                  </p>
+                  <div className="mt-2 text-4xl font-black tracking-tight text-[#00a7a7] sm:text-5xl">
+                    MAKITA
+                  </div>
+                  <p className="mt-2 text-sm font-bold text-neutral-600">
+                    Outillage professionnel disponible à la vente.
+                  </p>
+
+                  <div className="mt-6 grid grid-cols-2 items-end gap-4 rounded-[1.25rem] bg-neutral-100 p-4">
+                    <Image
+                      src="/tools/perforateur.png"
+                      alt="Perfo-burineur Makita 18V"
+                      width={260}
+                      height={220}
+                      className="h-40 w-full object-contain drop-shadow-xl"
+                    />
+                    <Image
+                      src="/tools/meuleuse.png"
+                      alt="Meuleuse d'angle Makita 18V"
+                      width={260}
+                      height={220}
+                      className="h-40 w-full object-contain drop-shadow-xl"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
